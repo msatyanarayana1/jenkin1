@@ -35,12 +35,12 @@ pipeline {
 		}
 	}
 post {
-		unstable{
+		success{
 			emailext (
                 subject: "Unit test failed: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                 body: """Unit test failed: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'
                     Check console output at '${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]""",
-                recipientProviders: [[$class: 'FailingTestSuspectsRecipientProvider']],to: 'raj.totaldevops@gmail.com'
+                recipientProviders: [[$class: 'FailingTestSuspectsRecipientProvider']],to: 'msatyanarayana@yodlee.com'
             )
 		}
 		
